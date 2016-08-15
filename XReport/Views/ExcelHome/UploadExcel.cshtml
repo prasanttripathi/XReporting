@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Upload Excel";
+    Layout = "~/Views/Shared/_ExcelLayout.cshtml";
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+}
+
+
+@using (Html.BeginForm("UploadExcel", "ExcelHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{ 
+
+<div class="jumbotron" style="background-color:lightblue">
+    <div class=" container">
+        <div class="row">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="col"><span class="h3">Please upload excel sheet here</span></div>                   
+                </div>
+                <div class="panel-body">
+                    <input style="height:40px" id="File1" type="file" name="file" />
+                </div>
+                
+                <span style="color:green">@ViewBag.Data</span></div>
+              <br />
+                
+                @if (ViewBag.panel == "Visible")
+                {
+                    <button type="button" class="btn btn-md btn-danger" onclick="location.href ='@Url.Action("ViewReport", "ExcelHome")'" > View Data </button>
+                }
+                
+                <br />
+                <br />
+            </div>
+            
+          
+        <input class="btn-success btn-lg" type="submit" style="width:220px" value="Submit" id="submit"/> <span>&nbsp;&nbsp; </span>
+
+            @if (ViewBag.Status == "Yes")
+            {
+                
+     <span  style="color:green" class="h2 glyphicon glyphicon-arrow-right">&nbsp;&nbsp; </span>
+    <button id="btnReportGen" type="button" class="btn btn-lg btn-success" style="width:220px" onclick="location.href ='@Url.Action("GenerateReport", "ExcelHome")'"> Generate Report </button>
+    <span > &nbsp;&nbsp; </span>
+            }
+            @if (ViewBag.Status == "No")
+            {
+                <input class="btn-danger btn-lg" type="button" onclick="" value="Generate Report" style="display: none" />
+            }
+            @if (ViewBag.panel == "Visible")
+            {
+                
+                <span style="color:green" class="h2 glyphicon glyphicon-arrow-right"> &nbsp;&nbsp; </span>
+                <button style="width:220px" type="button" class="btn btn-lg btn-success" onclick="location.href ='@Url.Action("CreateReport", "ExcelHome")'"> Create </button>
+
+            }
+            @if (ViewBag.panel == "Visible")
+            {
+            }
+
+        </div>
+    </div>
+
+}
+

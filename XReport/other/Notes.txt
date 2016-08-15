@@ -1,0 +1,28 @@
+﻿ //using OfficeOpenXml  
+ 
+ using EPPLUS external library
+
+
+                 /*string csvFilePath =    System.IO.Path.GetFullPath(Request.Files["file"].FileName);
+                 string excelFilePath = @"D:\" + (Path.GetFileName(Request.Files["file"].FileName)).Replace(fileExtension, ".xls");
+
+                   string worksheetsName = "Test";
+                   bool firstRowIsHeader = true;
+
+                   var excelTextFormat = new ExcelTextFormat();
+                   excelTextFormat.Delimiter = ',';
+                   excelTextFormat.EOL = "\r";
+
+                   var excelFileInfo = new FileInfo(excelFilePath);
+                   var csvFileInfo = new FileInfo(csvFilePath);
+
+                   using (ExcelPackage package = new ExcelPackage(excelFileInfo))
+                   {
+                       ExcelWorksheet worksheet = package.Workbook.Worksheets.Add(worksheetsName);
+                       worksheet.Cells["A1"].LoadFromText(csvFileInfo, excelTextFormat, OfficeOpenXml.Table.TableStyles.Medium25, firstRowIsHeader);
+                       package.Save();
+                   }*/
+
+
+
+
